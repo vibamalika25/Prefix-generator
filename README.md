@@ -2,6 +2,8 @@
 
 A Node.js web application that generates and manages prefixes from Excel data. Built with Express and EJS, it provides a user-friendly interface to view, search, and export prefix information stored in spreadsheet format.
 
+[![Deployed on Render](https://img.shields.io/badge/Deployed%20on-Render-blue)](https://prefix-generator-m0b3.onrender.com)
+
 ## ✨ Features
 - 📊 Read and display prefix data from Excel files
 - 🔍 Search and filter prefixes
