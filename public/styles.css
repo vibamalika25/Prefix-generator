@@ -1,0 +1,158 @@
+/* Reset some basic elements for consistency */
+body, h1, h2, h3, p, form, input, button, table, th, td {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; /* Alice blue background for a soft look */
+    color: #333; /* Dark text color for readability */
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #ff6347; /* Tomato color for the title */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+h2, h3 {
+    text-align: center;
+    color: #333; /* Dark color for subheadings */
+    margin-bottom: 10px;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #ffffff; /* White background for the form */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow for modern look */
+    transition: box-shadow 0.3s ease;
+}
+
+form:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+label {
+    font-size: 1.2em;
+    color: #ff6347; /* Tomato color for labels */
+    margin-bottom: 10px;
+    display: block;
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 12px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9; /* Light background for inputs */
+    color: #333; /* Dark text color */
+    transition: border 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #ff6347; /* Tomato border color on focus */
+    outline: none;
+}
+
+button {
+    background: #ff6347; /* Tomato color for buttons */
+    color: #ffffff; /* White text color on button */
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: #ff4500; /* Darker tomato color on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    background: #ffffff; /* White background for table */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow for table */
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Light border color */
+}
+
+th {
+    background: #ff6347; /* Tomato background for table headers */
+    color: #ffffff; /* White text color for headers */
+    font-size: 1.2em;
+}
+
+td {
+    font-size: 1em;
+}
+
+tr:hover td {
+    background: #f0f8ff; /* Alice blue background for row hover */
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Style for form inside table */
+form[action="/edit-example"], form[action="/delete-example"] {
+    display: inline-block;
+}
+
+input[type="text"][name="updatedExample"], 
+input[type="text"][name="updatedMeaning"] {
+    width: auto;
+    margin-right: 10px;
+    padding: 6px;
+    background-color: #f9f9f9; /* Light background for inline forms */
+    color: #333; /* Dark text color */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+button[type="submit"] {
+    padding: 6px 12px;
+    font-size: 0.9em;
+}
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2, h3 {
+        font-size: 1.4em; /* Adjust font size for smaller screens */
+    }
+
+    form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    table, th, td {
+        font-size: 0.9em;
+    }
+}
+

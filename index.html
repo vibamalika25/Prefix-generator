@@ -1,0 +1,36 @@
+const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser');
+const xlsx = require('xlsx');
+
+const app = express();
+app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Load Excel data
+const workbook = xlsx.readFile('prefix_data.xlsx');
+const sheetName = workbook.SheetNames[0];
+const sheet = workbook.Sheets[sheetName];
+const data = xlsx.utils.sheet_to_json(sheet);
+
+// Function to find prefix matches
+const findPrefixMatches = (prefix) => {
+    return data.filter(item => item.Prefix && item.Prefix.startsWith(prefix));
+};
+
+// Routes
+app.get('/', (req, res) => {
+    res.render('index', { words: [] });
+});
+
+app.post('/generate', (req, res) => {
+
+
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
