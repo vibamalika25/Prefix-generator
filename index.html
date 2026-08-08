@@ -25,12 +25,26 @@ app.get('/', (req, res) => {
 });
 
 app.post('/generate', (req, res) => {
-
-
+    const { prefix } = req.body;
+    
+    if (!prefix || prefix.trim() === '') {
+        return res.render('index', { words: [], error: 'Please enter a prefix' });
+    }
+    
+    const matches = findPrefixMatches(prefix.trim());
+    
+    if (matches.length === 0) {
+        return res.render('index', { words: [], error: 'No matches found for this prefix' });
+    }
+    
+    // Extract the words/names from the matches
+    const words = matches.map(item => item.Word || item.Name || item.Prefix);
+    
+    res.render('index', { words, error: null });
+});
 
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
-
